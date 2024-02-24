@@ -1,0 +1,32 @@
+---
+import Header from "../components/Header.astro"
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body class="bg-black">
+   <Header />
+    <main class="mx-[17.5%] h-full text-white test-sm font-medium">
+      <slot />
+    </main>
+  </body>
+</html>
+
+<style is:global>
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: black;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #6b21a8;
+    border-radius: 10px;
+    height: 20%;
+  }
+</style>

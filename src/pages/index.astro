@@ -1,0 +1,14 @@
+---
+import Layout from "./layouts/Layout.astro";
+import { HeroText } from "./components/HeroText";
+import HeroButtons from "./components/HeroButtons.astro";
+import HeroCards from "./components/HeroCards.astro";
+---
+
+<Layout>
+  <section class="h-fit grid items-center">
+    <HeroText client:only="react" />
+    <HeroButtons />
+    <HeroCards />
+  </section>
+</Layout>
