@@ -1,6 +1,6 @@
 import { createSignal } from "solid-js";
 
-const [flag, setFlag] = createSignal("PT");
+const [flag, setFlag] = createSignal("en");
 
 export const HeaderFlag = () => {
   return (
@@ -9,8 +9,8 @@ export const HeaderFlag = () => {
       onChange={(e) => setFlag(e.target.value)}
       value={flag()}
     >
-      <option value="PT">BR</option>
-      <option value="EN">US</option>
+      <option value="pt">BR</option>
+      <option value="en">US</option>
     </select>
   );
 };

@@ -1,10 +1,17 @@
-import { createSignal } from "solid-js";
+import { createEffect, createSignal } from "solid-js";
 import { randomNumber } from "../functions/random_number";
 
-const GAMES = ["Valorant", "CS:GO", "Apex Legends", "Fortnite", "PUBG"];
+const GAMES = ["Scum", "CS2", "DayZ", "Rust", "Squad", "Apex", "Fortnite"];
 const [game, setGame] = createSignal(GAMES[randomNumber(GAMES.length - 1)]);
 
 export const HeroText = () => {
+  createEffect(() => {
+    const interval = setInterval(() => {
+      setGame(GAMES[randomNumber(GAMES.length - 1)]);
+    }, 5000);
+    return () => clearInterval(interval);
+  });
+
   return (
     <div class="mt-[12%]">
       <h1 class="text-6xl font-bold">The best cheats for</h1>
